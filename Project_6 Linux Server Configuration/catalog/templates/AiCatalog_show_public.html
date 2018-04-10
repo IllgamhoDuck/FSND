@@ -1,0 +1,47 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+
+<section class="hide670s ai_main ai_flex3">
+    <img class="logo" src="{{url_for('static', filename = 'logo.png')}}" alt="logo">
+</section>
+
+{% include "__main__navigation_b.html" %}
+
+{% endblock %}
+{% block content %}
+
+<section class="hide670b ai_main ai_flex3">
+    <img class="logo" src="{{url_for('static', filename = 'logo.png')}}" alt="logo">
+</section>
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main">
+  <section class="ai_main_inside row ai_flex4 ai_flex5">
+
+    {% if aicatalogs != [] %}
+    {% for aicatalog in aicatalogs %}
+
+    <article class="aicatalog_200px col-md-3">
+      <div class="ai_pic3">
+          <img class="aicatalog_img ai_pic3" src="{{aicatalog.picture}}" alt="picture of Ai catalog">
+      </div>
+
+      <div class="aicatalog_text">
+        <div class="ai_pic3 ai_flex2">
+          <a class="" href="{{url_for('showAiCustom', aicatalog_id = aicatalog.id)}}">
+            <h2 class="upper">{{aicatalog.name}}</h2>
+          </a>
+          <p>{{aicatalog.description}}</p>
+        </div>
+      </div>
+    </article>
+
+    {% endfor %}
+    {% endif %}
+
+  </section>
+</section>
+
+{% endblock %}

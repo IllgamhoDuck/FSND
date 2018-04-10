@@ -1,0 +1,57 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+
+<section class="hide670s ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">Ai list</section>
+</section>
+
+{% include "__main__navigation_b.html" %}
+
+{% endblock %}
+{% block content %}
+
+<section class="hide670b ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">Ai list</section>
+</section>
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main text-center">
+  <section class="ai_main_inside row">
+
+    {% if ais != [] %}
+    {% for ai in ais %}
+
+    <article class="col-md-6">
+      <div class="row">
+        <div class="ai_flex2 ai_h180px col-md-4">
+          <img class="ai_pic7" src="{{ai.picture}}" alt="picture of Ai">
+        </div>
+        <div class="ai_flex col-md-8">
+          <h2>{{ai.name}}</h2>
+          <p>{{ai.description}}</p>
+          <a href="{{url_for('ai.editAi', ai_id = ai.id)}}"><span>Edit</span></a>
+          <a href="{{url_for('ai.deleteAi', ai_id = ai.id)}}"><span>Delete</span></a>
+        </div>
+      </div>
+    </article >
+
+    {% endfor %}
+    {% endif %}
+
+    <article class="ai_flex col-md-6">
+      <div class="row">
+        <div class="ai_flex ai_h180px col-md-4">
+          <a href="{{url_for('ai.newAi')}}"><img class="ai_pic2" src="{{url_for('static', filename='plus.png')}}" alt="add ai"></a>
+        </div>
+        <div class="col-md-8 ai_flex">
+          <h2 class="">ADD AI</h2>
+        </div>
+      </div>
+    </article >
+
+  </section>
+</section>
+
+{% endblock %}

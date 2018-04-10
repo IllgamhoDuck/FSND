@@ -1,0 +1,23 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+{% include "__main__navigation_b.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main">
+  <section class="ai_main_inside">
+    <article class="ai_500px">
+      <img class="img_at_670css ai_orisize_pic" src="{{ainews.picture}}" alt="picture of Ai News">
+      <form class="" action="{{url_for('ainews.deleteAiNews', ainews_id = ainews.id)}}?state={{STATE}}" method="post">
+        <p>Are you sure you want to delete {{ainews.name}} Ai?</p>
+        <button type="submit" name="button">Delete</button>
+      </form>
+    </article>
+    <a href="{{url_for('showAiNews')}}"><button type="button" name="cancel">Cancel</button></a>
+  </section>
+</section>
+
+{% endblock %}

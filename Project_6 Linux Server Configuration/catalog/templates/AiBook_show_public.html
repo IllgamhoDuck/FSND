@@ -1,0 +1,45 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+
+<section class="hide670s ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">Ai Book list</section>
+</section>
+
+{% include "__main__navigation_b.html" %}
+
+{% endblock %}
+{% block content %}
+
+<section class="hide670b ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">Ai Book list</section>
+</section>
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main text-center">
+  <section class="ai_main_inside row">
+
+    {% if aibooks != [] %}
+    {% for aibook in aibooks %}
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="ai_h250px col-md-3 ai_flex2">
+          <img class="ai_pic6" src="{{aibook.picture}}" alt="picture of Ai">
+        </div>
+        <div class="col-md-9 ai_flex">
+          <h3>{{aibook.name}}</h3>
+          <h4>{{aibook.author}}</h4>
+          <h4>{{aibook.price}}</h4>
+          <p>{{aibook.description}}</p>
+      </div>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+
+  </section>
+</section>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+{% include "__main__navigation_b.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main">
+  <section class="ai_main_inside">
+    <div class="">
+      <span class="red upper">{{aicatalog.name}}</span>
+      <span class="upper">is</span>
+      <span class="red upper">main catalog</span>
+      <span class="upper">you</span>
+      <span class="red upper">cannot Edit&nbsp;&nbsp;&nbsp;</span>
+
+    <a href="{{url_for('showAiCatalog')}}">
+      <button type="button" name="cancel">GO BACK</button>
+    </a>
+  </section>
+</section>
+
+{% endblock %}

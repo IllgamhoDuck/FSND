@@ -1,0 +1,57 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+
+<section class="hide670s ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">{{aicatalog.name}} list</section>
+</section>
+
+{% include "__main__navigation_b.html" %}
+
+{% endblock %}
+{% block content %}
+
+<section class="hide670b ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">{{aicatalog.name}} list</section>
+</section>
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main text-center">
+  <section class="ai_main_inside row">
+
+    {% if aicustoms != [] %}
+    {% for aicustom in aicustoms %}
+
+    <article class="col-md-6">
+      <div class="row">
+        <div class="ai_flex2 ai_h180px col-md-4">
+          <img class="ai_pic7" src="{{aicustom.picture}}" alt="picture of {{aicatalog.name}}">
+        </div>
+        <div class="ai_flex col-md-8">
+          <h2>{{aicustom.name}}</h2>
+          <p>{{aicustom.description}}</p>
+          <a href="{{url_for('editAiCustom', aicatalog_id = aicatalog.id, aicustom_id = aicustom.id)}}"><span>Edit</span></a>
+          <a href="{{url_for('deleteAiCustom', aicatalog_id = aicatalog.id, aicustom_id = aicustom.id)}}"><span>Delete</span></a>
+        </div>
+      </div>
+    </article >
+
+    {% endfor %}
+    {% endif %}
+
+    <article class="ai_flex col-md-6">
+      <div class="row">
+        <div class="ai_flex ai_h180px col-md-4">
+          <a href="{{url_for('newAiCustom', aicatalog_id = aicatalog.id)}}"><img class="ai_pic2" src="{{url_for('static', filename='plus.png')}}" alt="add {{aicatalog.name}}"></a>
+        </div>
+        <div class="col-md-8 ai_flex">
+          <h2 class="upper">ADD {{aicatalog.name}}</h2>
+        </div>
+      </div>
+    </article >
+
+  </section>
+</section>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+
+<section class="hide670s ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">Ai Book list</section>
+</section>
+
+{% include "__main__navigation_b.html" %}
+
+{% endblock %}
+{% block content %}
+
+<section class="hide670b ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">Ai Book list</section>
+</section>
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main text-center">
+  <section class="ai_main_inside row">
+
+    {% if aibooks != [] %}
+    {% for aibook in aibooks %}
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="ai_h250px col-md-3 ai_flex2">
+          <img class="ai_pic6" src="{{aibook.picture}}" alt="picture of Ai">
+        </div>
+        <div class="col-md-9 ai_flex">
+          <h3>{{aibook.name}}</h3>
+          <h4>{{aibook.author}}</h4>
+          <h4>{{aibook.price}}</h4>
+          <p>{{aibook.description}}</p>
+          <a href="{{url_for('aibook.editAiBook', aibook_id = aibook.id)}}"><span>Edit</span></a>
+          <a href="{{url_for('aibook.deleteAiBook', aibook_id = aibook.id)}}"><span>Delete</span></a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-3 ai_h250px ai_flex">
+          <a class="" href="{{url_for('aibook.newAiBook')}}"><img class="ai_pic2 ai_vertical_middle_70px" src="{{url_for('static', filename='plus.png')}}" alt="add ai book"></a>
+        </div>
+        <div class="col-md-9 ai_flex">
+          <h2 class="">ADD AI BOOK</h2>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</section>
+
+{% endblock %}

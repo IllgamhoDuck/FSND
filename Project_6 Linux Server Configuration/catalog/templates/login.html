@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X UA Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <!-- Ai website CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+    <link rel="stylesheet" media="screen and (min-width: 768px)" type = text/css href="{{url_for('static', filename='styles.css')}}">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" type = text/css href="{{url_for('static', filename='styles768.css')}}">
+
+    <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+    </script>
+
+    <script src="//apis.google.com/js/platform.js?onload=start">
+    </script>
+    <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
+  </head>
+  <body>
+    <div class="main_container">
+
+      <header class="login_img">
+        <img class="main_background_img" src="{{url_for('static', filename='winter-20234_1920.jpg')}}" alt="background picture">
+        <div class="ai_content_with_picture ai_flex3">
+
+          {% include "__main__navigation_b.html" %}
+          <img class="hide670b img_at_login" src="{{url_for('static', filename = 'top_logo.png')}}" alt="logo at the login page">
+
+        </div>
+      </header>
+
+      <article class="container_2">
+        {% include "__main__flash.html" %}
+        {% include "__main__navigation_s.html" %}
+        <section class="ai_main">
+          <section class="ai_main_inside ai_flex2">
+            <section class="login_container_b login_container_s ai_flex2">
+              <div class="ai_main">
+                <section class="ai_main_inside direct_login ai_flex text-center">
+                  <form class="" action="{{url_for('new_user')}}" method="post">
+
+                    <label for="username">username: </label>
+                    <input type="text" name="username" value=""></br>
+
+                    <label for="email">email: </label>
+                    <input type="text" name="email" value=""></br>
+
+                    <label for="password">password: </label>
+                    <input type="text" name="password" value=""></br></br>
+
+                    <button type="submit" name="button">Create New User</button>
+                  </form>
+                </section>
+              </div>
+              <div class="ai_main">
+                <section class="ai_main_inside direct_login ai_flex text-center">
+                  <form class="" action="{{url_for('ailyconnect')}}" method="post">
+
+                    <label for="email">email: </label>
+                    <input type="text" name="email" value=""></br>
+
+                    <label for="password">password: </label>
+                    <input type="text" name="password" value=""></br></br>
+
+                    <button type="submit" name="button">Login</button>
+                  </form>
+                </section>
+              </div>
+              <div class="ai_flex3">
+                {% include "__login__google.html" %}
+                {% include "__login__facebook.html" %}
+              </div>
+            </section>
+          </section>
+        </section>
+      </article>
+
+    </div>
+  </body>
+</html>

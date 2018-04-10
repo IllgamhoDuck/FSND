@@ -1,0 +1,46 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+
+<section class="hide670s ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">Ai News list</section>
+</section>
+
+{% include "__main__navigation_b.html" %}
+
+{% endblock %}
+{% block content %}
+
+<section class="hide670b ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">Ai News list</section>
+</section>
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main text-center">
+  <section class="ai_main_inside row">
+
+    {% if ainewss != [] %}
+    {% for ainews in ainewss %}
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="ai_h250px col-md-4 ai_flex2">
+          <img class="ai_pic8 img_at_670css" src="{{ainews.picture}}" alt="picture of Ai">
+        </div>
+        <div class="col-md-8 ai_flex">
+          <h3>{{ainews.name}}</h3>
+          <h4>{{ainews.author}}</h4>
+          <h4>{{ainews.price}}</h4>
+          <p>{{ainews.description}}</p>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+
+  </section>
+</section>
+
+{% endblock %}

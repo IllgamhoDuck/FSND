@@ -1,0 +1,23 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+{% include "__main__navigation_b.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main">
+  <section class="ai_main_inside">
+    <article class="ai_500px">
+      <img class="img_at_670css ai_orisize_pic" src="{{aicustom.picture}}" alt="picture of {{aicatalog.name}}">
+      <form class="" action="{{url_for('deleteAiCustom', aicatalog_id = aicatalog.id, aicustom_id = aicustom.id)}}?state={{STATE}}" method="post">
+        <p>Are you sure you want to delete {{aicustom.name}} at {{aicatalog.name}}?</p>
+        <button type="submit" name="button">Delete</button>
+      </form>
+    </article>
+    <a href="{{url_for('showAiCustom', aicatalog_id = aicatalog.id)}}"><button type="button" name="cancel">Cancel</button></a>
+  </section>
+</section>
+
+{% endblock %}
