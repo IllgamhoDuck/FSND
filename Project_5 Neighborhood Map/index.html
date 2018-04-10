@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X UA Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Neighborhood Map</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
+    <link rel="stylesheet" media="screen and (min-width: 700px)" href="css/style.css">
+    <link rel="stylesheet" media="screen and (min-width: 400px) and (max-width: 699px)" href="css/style-699.css">
+    <link rel="stylesheet" media="screen and (max-width: 399px)" href="css/style-399.css">
+  </head>
+  <body>
+    <section class="container container-399">
+
+      <article id="side-menu" class="side-menu side-menu-hide-699 side-menu-hide-399">
+        <div id="side-menu-main" class="side-menu-main-399">
+          <div id="side-menu-icon" class="side-menu-icon-399">
+            <img id="aily-icon" src="img/logo.png" alt="aily" data-bind="click: default_settings">
+            <img id="aily-icon-small" src="img/logo_small.png" alt="aily_small" data-bind="click: default_settings">
+          </div>
+        </div>
+        <div id="side-menu-filter" class="side-menu-filter-399">
+          <div class="filter-balance"></div>
+          <input id="filter-text" type="text" placeholder="Ex: illgamho lake">
+          <input id="filter-button" type="button" value="Filter" data-bind="click: filter">
+          <div class="filter-balance"></div>
+        </div>
+        <div id="neighbor-list" data-bind="template: { name: 'list-template', foreach: mapList }">
+        </div>
+      </article>
+
+      <div class="side-main side-main-399">
+        <div class="hamburger">
+          <div class="hamburger-image">
+            <img id="ham-img" src="img/hamburger.png" alt="hamburger-icon">
+          </div>
+        </div>
+        <div class="word word-699 word-399">Ducky Neighborhood</div>
+        <div class="balance"></div>
+      </div>
+
+      <div id="google-map" class="google-map google-map-spread-699 google-map-spread-399"></div>
+
+    </section>
+
+    <script id="list-template" type="text/template">
+      <div class="list-menu" data-bind="text: $data.title, click: $parent.selectListmenu.bind($data), attr: { id: $data.id }"></div>
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type='text/javascript' src='js/knockout-3.4.2.js'></script>
+    <script type='text/javascript' src='js/knockout.localStorage.js'></script>
+    <script type='text/javascript' src="js/googlemap.js"></script>
+    <script type='text/javascript' src="js/neighbor.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBjcdU-05zTrUk0KuzpTAV1DkN_3BHXT_k&v=3&callback=initMap">
+    </script>
+
+  </body>
+</html>

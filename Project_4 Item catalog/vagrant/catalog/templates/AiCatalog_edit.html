@@ -1,0 +1,42 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+{% include "__main__navigation_b.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main">
+  <section class="ai_main_inside">
+    <div class="">
+      <p>editing the {{aicatalog.id}} Ai catalog</p>
+    </div>
+
+    {% if aicatalog != [] %}
+
+    <article class="ai_500px">
+      <img class="img_at_670css ai_orisize_pic" src="{{aicatalog.picture}}" alt="picture of Ai catalog">
+      <div class="ai_nooverlap_text">
+        <form class="" action="{{url_for('catalog.editAiCatalog', aicatalog_id = aicatalog.id)}}?state={{STATE}}" method="post">
+          <label for="name">Name: </label>
+          <input type="text" name="name" value="{{aicatalog.name}}"></br>
+
+          <label for="description">Description: </label></br>
+          <textarea class="textarea ai_textarea" name="description" rows="8" cols="80">{{aicatalog.description}}</textarea></br>
+
+          <label for="picture">Picture: </label></br>
+          <input type="multitype/image" name="picture" value="{{aicatalog.picture}}" placeholder="paste image url"></br>
+
+          <button type="submit" name="button">Edit</button>
+        </form>
+      </div>
+    </article>
+
+    {% endif %}
+
+    <a href="{{url_for('showAiCatalog')}}"><button type="button" name="cancel">Cancel</button></a>
+  </section>
+</section>
+
+{% endblock %}

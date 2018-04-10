@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X UA Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <title>Ducky Web site</title>
+    <link rel="stylesheet" media="screen and (min-width: 100px) and (max-width: 553px)" href="css/ducky-100-553px.css">
+    <link rel="stylesheet" media="screen and (min-width: 554px) and (max-width: 670px)" href="css/ducky-554-670px.css">
+    <link rel="stylesheet" media="screen and (min-width: 671px) and (max-width: 1000px)" href="css/ducky-671-1000px.css">
+    <link rel="stylesheet" media="screen and (min-width: 1001px)" href="css/ducky-1001px.css">
+  </head>
+  <body>
+    <div class="whole-content-wrapper">
+
+      <!-- logo & name & nick name -->
+
+      <header class="header">
+        <div class="header-inner">
+          <img class="header-logo" src="https://d125fmws0bore1.cloudfront.net/assets/udacity_share-46db4b8faf075a5af5a1070a7fa0ad3639783609ff45f447e4ea467fe3aa9d32.png" alt="Udacity logo">
+          <div class="header-title">
+            <div class="header-main-title">
+              Park, Hyun-Byung
+            </div>
+            <div class="header-sub-title">
+              DUCKY
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+
+        <!-- main duck image -->
+
+        <section class="duck-image">
+
+          <!-- The duck image will be always 100% width and it has 2 image resolution -->
+
+          <img class="duck-image-controller"
+               src="img/Ducky_design_presented_410.png"
+               sizes="(max-width: 500px) width="100%", (min-width: 501px) width="100%""
+               srcset="img/Ducky_design_presented_410.png 410w, img/Ducky_design_presented_1333.png 1333w"
+               alt="main-duck">
+          <div class="duck-image-inner">
+            <p class="duck-image-text">Living in a Human world is a Tuff thing QUARK!!!</p>
+          </div>
+        </section>
+
+        <div class="line">
+        </div>
+
+        <!-- the 3 image size will not change. It's fixed by 250px width. displayed by flexbox -->
+
+        <section class="introduce-ducks">
+          <div class="ducks-title">
+            GLOBAL DUCKS
+          </div>
+          <div class="container">
+            <article class="duck-1">
+                <img class="duck-1-img" src="https://sophosnews.files.wordpress.com/2015/06/duckduckgo-wallpaper-1200_red.png?w=780&h=408&crop=1" alt="duckduckgo">
+              <div class="duck-1-text">
+                <h2>DuckDuckgo</h2>
+                <a href="https://duckduckgo.com/" target="_blank">https://duckduckgo.com/</a>
+              </div>
+            </article>
+            <article class="duck-2">
+              <div class="duck-2-img">
+                <img class="duck-1-img" src="https://i.warosu.org/data/vr/img/0011/43/1382133686474.jpg" alt="duckduckgo">
+              </div>
+              <div class="duck-2-text">
+                <h2>Ducks Quack Me Up</h2>
+                <a href="http://ducksarethebest.com/" target="_blank">http://ducksarethebest.com/</a>
+              </div>
+            </article>
+            <article class="duck-3">
+              <div class="duck-3-img">
+                <img class="duck-1-img" src="https://i.ytimg.com/vi/w_LB-CO4g9A/maxresdefault.jpg" alt="duckduckgo">
+              </div>
+              <div class="duck-3-text">
+                <h2>The duck song</h2>
+                <a href="https://www.youtube.com/watch?v=MtN1YnoL46Q" target="_blank">https://www.youtube.com/watch?v=MtN1YnoL46Q</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- You know that duck's cry Quack! But it's wrong. It's Quark! Smaller than atom! -->
+
+      <footer class="footer">
+        QUARK! QUARK! QUARK! QUARK! QUARK! QUARK! QUARK!
+      </footer>
+
+    </div>
+  </body>
+</html>

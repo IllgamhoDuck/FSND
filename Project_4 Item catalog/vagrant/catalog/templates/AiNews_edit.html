@@ -1,0 +1,42 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+{% include "__main__navigation_b.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main">
+  <section class="ai_main_inside">
+    <div class="">
+      <p>editing the {{ainews.id}} Ai</p>
+    </div>
+
+    {% if ai != [] %}
+
+    <article class="ai_500px">
+      <img class="img_at_670css ai_orisize_pic" src="{{ainews.picture}}" alt="picture of Ai">
+      <div class="ai_nooverlap_text">
+        <form class="" action="{{url_for('ainews.editAiNews', ainews_id = ainews.id)}}?state={{STATE}}" method="post">
+          <label for="name">Name: </label>
+          <input type="text" name="name" value="{{ainews.name}}"></br>
+
+          <label for="description">Description: </label></br>
+          <textarea class="textarea ai_textarea" name="description" rows="8" cols="80">{{ainews.description}}</textarea></br>
+
+          <label for="picture">Picture: </label></br>
+          <input type="multitype/image" name="picture" value="{{ainews.picture}}" placeholder="paste image url"></br>
+
+          <button type="submit" name="button">Edit</button>
+        </form>
+      </div>
+    </article>
+
+    {% endif %}
+
+    <a href="{{url_for('showAiNews')}}"><button type="button" name="cancel">Cancel</button></a>
+  </section>
+</section>
+
+{% endblock %}

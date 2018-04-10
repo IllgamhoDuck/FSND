@@ -1,0 +1,45 @@
+<div class="ai_main">
+  <div class="ai_main_inside2 ai_flex_top">
+    <span><img class="img_at_top" src="{{url_for('static', filename = 'top_logo.png')}}" alt="logo at the top"></span>
+
+    {% if 'username' not in session %}
+
+    <span>
+      <span class="">
+        <img class="login" src="{{url_for('static', filename = 'login.png')}}" alt="login image">
+      </span>
+      <span>
+        <a href="{{url_for('Login')}}">LOGIN</a>
+      </span>
+    </span>
+
+    {% else %}
+
+    <span>
+
+      {% if session.picture == ''%}
+
+      <span class="">
+        <img class="login" src="{{url_for('static', filename = 'user.png')}}" alt="user no image">
+      </span>
+
+      {% else %}
+
+      <span class="">
+        <img class="login img_circle" src="{{session.picture}}" alt="user image">&nbsp;&nbsp;
+      </span>
+
+      {% endif %}
+
+      <span>
+        {{session.username}}&nbsp;&nbsp;&nbsp;
+      </span>
+      <span>
+        <a href="{{url_for('Logout')}}">LOGOUT</a>
+      </span>
+    </span>
+
+    {% endif %}
+
+  </div>
+</div>

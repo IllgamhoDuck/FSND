@@ -1,0 +1,61 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+
+<section class="hide670s ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">Ai Match list</section>
+</section>
+
+{% include "__main__navigation_b.html" %}
+
+{% endblock %}
+{% block content %}
+
+<section class="hide670b ai_main text-center h1">
+  <section class="ai_main_inside ai_flex ai_header upper">Ai Match list</section>
+</section>
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main text-center">
+  <section class="ai_main_inside row">
+
+    {% if ainewss != [] %}
+    {% for aimatch in aimatchs %}
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="ai_h250px col-md-4 ai_flex2">
+          <img class="img_at_670css ai_pic9" src="{{aimatch.picture}}" alt="picture of Ai">
+        </div>
+        <div class="col-md-8 ai_flex">
+          <h3>{{aimatch.name}}</h3>
+          <h4>{{aimatch.place}}</h4>
+          <h6>{{aimatch.participant_A}}</h6>
+          <h6>vs</h6>
+          <h6>{{aimatch.participant_B}}</h6>
+          <p>{{aimatch.description}}</p>
+          <a href="{{url_for('aimatch.editAiMatch', aimatch_id = aimatch.id)}}"><span>Edit</span></a>
+          <a href="{{url_for('aimatch.deleteAiMatch', aimatch_id = aimatch.id)}}"><span>Delete</span></a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+    {% endif %}
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-4 ai_h250px ai_flex">
+          <a class="" href="{{url_for('aimatch.newAiMatch')}}"><img class="ai_pic2 ai_vertical_middle_70px" src="{{url_for('static', filename='plus.png')}}" alt="add ai match"></a>
+        </div>
+        <div class="col-md-8 ai_flex">
+          <h2 class="">ADD AI MATCH</h2>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</section>
+
+{% endblock %}

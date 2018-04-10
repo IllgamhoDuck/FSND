@@ -1,0 +1,51 @@
+{% extends "__main__.html" %}
+{% block head %}
+{% include "__main__header.html" %}
+{% include "__main__navigation_b.html" %}
+{% endblock %}
+{% block content %}
+
+{% include "__main__navigation_s.html" %}
+
+<section class="ai_main">
+  <section class="ai_main_inside">
+    <div class="">
+      <p>editing the {{aimatch.id}} Ai</p>
+    </div>
+
+    {% if ai != [] %}
+
+    <article class="ai_500px">
+      <img class="img_at_670css ai_orisize_pic" src="{{aimatch.picture}}" alt="picture of Ai">
+      <div class="ai_nooverlap_text">
+        <form class="" action="{{url_for('aimatch.editAiMatch', aimatch_id = aimatch.id)}}?state={{STATE}}" method="post">
+          <label for="name">Name: </label>
+          <input type="text" name="name" value="{{aimatch.name}}"></br>
+
+          <label for="place">Place: </label>
+          <input type="text" name="place" value="{{aimatch.place}}"></br>
+
+          <label for="participant_A">Participant_A: </label>
+          <input type="text" name="participant_A" value="{{aimatch.participant_A}}"></br>
+
+          <label for="participant_B">Participant_B: </label>
+          <input type="text" name="participant_B" value="{{aimatch.participant_B}}"></br>
+
+          <label for="description">Description: </label></br>
+          <textarea class="textarea i_textarea" name="description" rows="8" cols="80">{{aimatch.description}}</textarea></br>
+
+          <label for="picture">Picture: </label></br>
+          <input type="multitype/image" name="picture" value="{{aimatch.picture}}" placeholder="paste image url"></br>
+
+          <button type="submit" name="button">Edit</button>
+        </form>
+      </div>
+    </article>
+
+    {% endif %}
+
+    <a href="{{url_for('showAiMatch')}}"><button type="button" name="cancel">Cancel</button></a>
+  </section>
+</section>
+
+{% endblock %}

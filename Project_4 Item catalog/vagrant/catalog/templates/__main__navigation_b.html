@@ -1,0 +1,33 @@
+<section class="ai_main hide670s">
+    <article class="navigation_bar ai_flex3">
+
+      <div class="navigation ai_flex3">
+        <div class="nav_icon_box ai_flex3">
+          <img class="nav_icon" src="{{url_for('static', filename = 'home.png')}}" alt="navigation icon image">
+        </div>
+        <div class="nav_name ai_flex3 style">
+          <a class="bold red upper size" href="{{url_for('showAiCatalog')}}">
+            home
+          </a>
+        </div>
+      </div>
+
+      {% if aicatalogs != []%}
+      {% for aicatalog in aicatalogs %}
+
+      <div class="navigation ai_flex3">
+        <div class="nav_icon_box ai_flex3">
+          <img class="nav_icon" src="{{url_for('static', filename = 'nav_icon.png')}}" alt="navigation icon image">
+        </div>
+        <div class="nav_name ai_flex3">
+          <a class="upper size style" href="{{url_for('showAiCustom', aicatalog_id = aicatalog.id)}}">
+            {{aicatalog.name}}
+          </a>
+        </div>
+      </div>
+
+      {% endfor %}
+      {% endif %}
+
+    </article>
+</section>
