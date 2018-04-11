@@ -6,8 +6,8 @@ This is where all my project of udacity full stack web developer nanodegree list
 
 
 # AiLY
-## Aritificial Intelligence Information Website Project 
-### [FRONT & BACKEND]
+- Aritificial Intelligence Information Website Project 
+- [FRONT & BACKEND]
 
 ![Backend](https://github.com/IllgamhoDuck/FSND/blob/master/Project_4%20Item%20catalog/vagrant/catalog/aily.png)
 
