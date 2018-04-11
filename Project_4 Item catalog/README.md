@@ -1,6 +1,7 @@
 # Item Catalog project - AiLY
 
 ![Aily](https://github.com/IllgamhoDuck/FSND/blob/master/Project_5%20Neighborhood%20Map/full.png)
+![Aily](https://github.com/IllgamhoDuck/FSND/blob/master/Project_5%20Neighborhood%20Map/small.png)
 
 ## Greeting Humans! I'm the duck from illgamho lake! QUARK!
 
