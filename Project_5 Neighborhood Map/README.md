@@ -1,6 +1,7 @@
 # Neighborhood Map Project
 
-![Ducky_big](https://github.com/IllgamhoDuck/FSDN-Project-5-Neighborhood-Map/blob/master/full.png?raw=true)
+![frontend](https://github.com/IllgamhoDuck/FSND/blob/master/Project_5%20Neighborhood%20Map/full.png)
+![frontend](https://github.com/IllgamhoDuck/FSND/blob/master/Project_5%20Neighborhood%20Map/small.png)
 
 Greeting Humans! I'm the duck from illgamho lake! QUARK!
 
