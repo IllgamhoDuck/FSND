@@ -1,7 +1,7 @@
 # Linux Server Configuration
 
 Greeting Humans! I'm the duck from illgamho lake! QUARK!
-![aily](https://github.com/IllgamhoDuck/FSDN-Project-6-Linux-Server-Configuration/blob/master/aily.png?raw=true)
+![aily](https://github.com/IllgamhoDuck/FSND/blob/master/Project_4%20Item%20catalog/vagrant/catalog/aily.png)
 This project will take a baseline installation of a Linux distribution on a virtual machine and prepare it to host your web applications, to include installing updates, securing it from a number of attack vectors and installing/configuring web and database servers.
 
 1. **Create Server** - Using Lightsail create instance / Update package
